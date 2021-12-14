@@ -1,10 +1,12 @@
 package com.bae.game.web;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,11 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.bae.game.domain.Game;
 import com.bae.game.service.GameService;
 
 @RestController
+@CrossOrigin
 public class GameController {
 
 	private GameService service;
@@ -40,8 +44,15 @@ public class GameController {
 	}
 
 	@GetMapping("/get/{id}")
-	public Game getGame(@PathVariable Integer id) {
-		return this.service.getGame(id);
+	public ResponseEntity<Game> getGame(@PathVariable Integer id) {
+		try {
+			Game get = this.service.getGame(id);
+			ResponseEntity<Game> response = new ResponseEntity<Game>(get, HttpStatus.OK);
+			return response;
+		} catch (NoSuchElementException e) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Game ID not found.");
+		}
+
 	}
 
 	@PutMapping("/replace/{id}")

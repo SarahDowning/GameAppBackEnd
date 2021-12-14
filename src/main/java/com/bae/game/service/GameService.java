@@ -15,7 +15,7 @@ public interface GameService {
 	// Get By ID
 	Game getGame(Integer id);
 
-	// Replace by ID
+	// Replace game
 	Game replaceGame(Integer id, Game newGame);
 
 	// Delete by ID
