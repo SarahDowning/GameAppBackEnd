@@ -42,6 +42,16 @@ public class Game {
 		this.platform = platform;
 		this.releaseYear = releaseYear;
 	}
+	
+
+	public Game(String gameTitle, String genre, String publisher, String platform, Integer releaseYear) {
+		super();
+		this.gameTitle = gameTitle;
+		this.genre = genre;
+		this.publisher = publisher;
+		this.platform = platform;
+		this.releaseYear = releaseYear;
+	}
 
 	// Getters and setters
 	public Integer getId() {

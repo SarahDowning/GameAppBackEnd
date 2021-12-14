@@ -42,7 +42,7 @@ public class GameServiceDB implements GameService {
 	public Game replaceGame(Integer id, Game newGame) {
 		Game existing = this.repo.findById(id).get();
 
-		existing.setId(newGame.getId());
+		existing.setId(id);
 		existing.setGameTitle(newGame.getGameTitle());
 		existing.setGenre(newGame.getGenre());
 		existing.setPublisher(newGame.getPublisher());
