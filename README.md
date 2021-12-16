@@ -10,7 +10,12 @@ The purpose of this project was to create a functioning front-end CRUD applicati
 * **Version Control:** GitHub for code integration.
 
 ## Architecture
+The diagram below represents the architecture of this project.
+* **Presentation Layer:** The front-end, what is seen visually and what the user interfaces with.
+* **Business Layer:** The back-end, applies business rules to data sent and received from the user.
+* **Data Layer:** The database, persists data by taking queries and returning data back.
 
+![Architecture](https://github.com/SarahDowning/GameAppBackEnd/blob/38830bdcb873e62e77196af4dbee691feda0d101/Documentation/Architecture%20Diagram.png)
 
 ## Database
 A database was created in MySQL to store persistant data, using spring to automatically populate the table with rows and specifics defined in Java.
