@@ -15,16 +15,17 @@ The purpose of this project was to create a functioning front-end CRUD applicati
 ## Database
 A database was created in MySQL to store persistant data, using spring to automatically populate the table with rows and specifics defined in Java.
 
-![ERD]()
+![ERD](https://github.com/SarahDowning/GameAppBackEnd/blob/43e031e73b6aea4576b83a582b12dfa8822f6345/Documentation/Game%20Application%20ERD.png)
+
 _Entity-relationship diagram showing the table created and each fields properties._
 
-![SQL-Data]()
+![SQL-Data](https://github.com/SarahDowning/GameAppBackEnd/blob/e4713b678d6ea212b864e071ef96940216a60710/Documentation/SQL-Result-Grid.png)
 _SQL Results showing data that has been stored persistently from user input._
 
 ### Database Testing
 In order to test that data was able to be stored, Postman and a H2 database were used to test each CRUD functionality end-point responded as expected. I was also able to check whether the exception handling status codes were correct.
 
-![Postman]()
+![Postman](https://github.com/SarahDowning/GameAppBackEnd/blob/e4713b678d6ea212b864e071ef96940216a60710/Documentation/postman.png)
 _Postman create function test, showing post request has worked, returning correct status code for created (201)._
 
 ## Back-End Functionality
